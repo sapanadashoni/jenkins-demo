@@ -4,21 +4,32 @@ pipeline{
             image 'node:20'
         }
     }
+
     stages{
-        stage('Clone') {
+
+        stage('Clone'){
             steps{
-                echo 'cloning repo'
+                checkout scm
             }
         }
-        stage('Build') {
+
+        stage('Install'){
+            steps{
+                sh 'npm install'
+            }
+        }
+
+        stage('Build'){
             steps{
                 sh 'npm run build'
             }
         }
-        stage('Test') {
+
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
         }
+
     }
 }
