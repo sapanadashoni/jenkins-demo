@@ -1,0 +1,7 @@
+{
+  "name": "jenkins-demo",
+  "scripts": {
+    "test": "echo Testing Successful",
+    "build": "echo Building Project"
+  }
+}
